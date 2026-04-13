@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cocktail Explorer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-800 shadow-md p-4 flex justify-between items-center sticky top-0 z-50">
+    <h1 class="text-2xl font-bold text-gray-900 dark:text-white">🍹 Cocktail Explorer</h1>
+    <ul class="flex space-x-6">
+      <li><a href="#" id="homeLink" class="hover:text-pink-500 text-gray-900 dark:text-white">Home</a></li>
+      <li><a href="#" id="favoritesLink" class="hover:text-pink-500 text-gray-900 dark:text-white">Favorites</a></li>
+      <li><a href="#" id="aboutLink" class="hover:text-pink-500 text-gray-900 dark:text-white">About</a></li>
+    </ul>
+  
+    <button id="darkToggle" class="px-3 py-1 rounded bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-white">Dark Mode</button>
+ </nav>
+
+  <!-- Search -->
+  <section class="p-6 text-center">
+    <h2 class="text-xl mb-4">Search Cocktails by First Letter</h2>
+    <input id="searchBox" maxlength="1" placeholder="Type a letter (a-z)" class="border p-2 rounded w-40 text-center">
+    <button id="searchBtn" class="ml-2 px-4 py-2 bg-pink-500 text-white rounded">Search</button>
+  </section>
+
+  <!-- Cocktails Grid -->
+  <section id="cocktailContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+    <!-- Cards injected here -->
+  </section>
+
+  <!-- Favorites Grid -->
+  <section id="favoritesSection" class="hidden p-6">
+    <h2 class="text-2xl font-bold mb-4">Your Favorites</h2>
+    <div id="favoritesContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Favorite cards injected here -->
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4">
+    <div class="modal-content relative">
+      <button id="closeModal" class="absolute top-2 right-2 text-gray-600 dark:text-gray-300 text-xl">&times;</button>
+      <img id="modalImg" src="" alt="" class="rounded w-full mb-4">
+      <h3 id="modalName" class="text-2xl font-bold mb-2"></h3>
+      <h4 class="font-semibold mb-1">Ingredients:</h4>
+      <ul id="modalIngredients" class="list-disc list-inside mb-4"></ul>
+      <h4 class="font-semibold mb-1">Instructions:</h4>
+      <p id="modalInstructions" class="mb-4"></p>
+      <button id="favBtn" class="px-4 py-2 bg-pink-500 text-white rounded"></button>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="aboutSection" class="hidden p-6 max-w-2xl mx-auto text-center">
+    <h2 class="text-2xl font-bold mb-4">About This App</h2>
+    <p>This Cocktail Explorer uses the <a href="https://www.thecocktaildb.com/" target="_blank" class="text-pink-500">CocktailDB API</a> to let you search drinks, view ingredients, and save your favorites. Built with ❤️ using JavaScript, TailwindCSS, and LocalStorage.</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
